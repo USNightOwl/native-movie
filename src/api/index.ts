@@ -14,4 +14,8 @@ export const API = {
     return `${apiDomain}/${type}/${mediaType}/day?api_key=${apiKey}&page=${page}`;
   },
   getImageUrl: (backdropPath: string, size = "original") => `https://image.tmdb.org/t/p/${size}/${backdropPath}`,
+  getAnimeList: () =>
+    `${apiDomain}/discover/movie?api_key=${apiKey}&language=en-US&page=1&with_genres=16&with_keywords=210024|287501&with_text_query=death&sort_by=popularity.desc`,
+  getHorrorList: () =>
+    `${apiDomain}/discover/movie?api_key=${apiKey}&include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=27`,
 };
