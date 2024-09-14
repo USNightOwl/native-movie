@@ -18,4 +18,10 @@ export const API = {
     `${apiDomain}/discover/movie?api_key=${apiKey}&language=en-US&page=1&with_genres=16&with_keywords=210024|287501&with_text_query=death&sort_by=popularity.desc`,
   getHorrorList: () =>
     `${apiDomain}/discover/movie?api_key=${apiKey}&include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=27`,
+  getTrendingList: (
+    query = "person", // movie | person | tv
+  ) => `${apiDomain}/trending/${query}/day?api_key=${apiKey}`,
+  getAnimeEpisodeList:
+    () => `${apiDomain}/discover/tv?api_key=${apiKey}&language=en-US&page=1&with_genres=16&with_keywords=210024|287501&with_text_query=death&sort_by=popularity.desc
+  `,
 };

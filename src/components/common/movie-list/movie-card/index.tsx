@@ -36,7 +36,13 @@ const MovieCard = ({ movie, onPress, size = "normal", children }: MovieCardProps
         </View>
       </View>
       <View className="pt-4">
-        <Text numberOfLines={1} ellipsizeMode="tail" style={styles.text} className="font-bold">
+        <Text
+          numberOfLines={1}
+          ellipsizeMode="tail"
+          // eslint-disable-next-line react-native/no-inline-styles
+          style={[styles.text, { width: size === "normal" ? width * 0.7 : 150 }]}
+          className="font-bold"
+        >
           {movie.title}
         </Text>
         <Text className="text-slate-500 mt-0.5">

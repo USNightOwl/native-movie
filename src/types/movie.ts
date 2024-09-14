@@ -25,3 +25,11 @@ export interface MovieType extends CommonType {
   video: boolean;
   original_title: string;
 }
+
+export interface TvShowType extends CommonType {
+  name: string;
+  first_air_date: string;
+  origin_country: string[];
+  original_name: string;
+  poster_path: string;
+}
