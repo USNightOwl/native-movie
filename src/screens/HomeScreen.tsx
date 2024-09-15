@@ -8,6 +8,7 @@ import { MovieType, TvShowType } from "../types/movie";
 import { API, fetcher } from "../api";
 import { PeopleType } from "../types/people";
 import TvShowList from "../components/common/tv-show-list";
+import TrendingPeople from "../components/common/trending-people";
 
 const HomeScreen = () => {
   const { data: topRatedList, isLoading: topRatedLoading } = useSWR<CommonResponse<MovieType[]>>(
@@ -49,7 +50,7 @@ const HomeScreen = () => {
       <MovieList title="Up coming" isLoading={popularLoading} data={popularList?.results || []} />
       <MovieList title="Anime" isLoading={animeLoading} data={animeList?.results || []} />
       <TvShowList title="Top Anime Series" data={animeEpisodeList?.results || []} />
-      {/*  */}
+      <TrendingPeople data={trendingPersonList?.results ? trendingPersonList?.results : []} />
       <TvShowList title="Top TV Show" data={tvList?.results || []} />
       <MovieList title="Horror" isLoading={horrorLoading} data={horrorList?.results || []} />
     </LayoutDefault>
