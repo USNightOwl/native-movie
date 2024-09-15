@@ -13,6 +13,10 @@ export const API = {
     if (type === EMovieType.DISCOVER) return `${apiDomain}/${type}/${mediaType}?api_key=${apiKey}&page=${page}`;
     return `${apiDomain}/${type}/${mediaType}/day?api_key=${apiKey}&page=${page}`;
   },
+  getDetail: (
+    id: string,
+    type = "movie", // movie | tv | person
+  ) => `${apiDomain}/${type}/${id}?api_key=${apiKey}`,
   getImageUrl: (backdropPath: string, size = "original") => `https://image.tmdb.org/t/p/${size}/${backdropPath}`,
   getAnimeList: () =>
     `${apiDomain}/discover/movie?api_key=${apiKey}&language=en-US&page=1&with_genres=16&with_keywords=210024|287501&with_text_query=death&sort_by=popularity.desc`,

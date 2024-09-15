@@ -1,3 +1,5 @@
+import { GenresDetailType, ProductionCompanyType, ProductionCountryType, SpokenLanguage } from ".";
+
 /* eslint-disable camelcase */
 export enum EMovieType {
   POPULAR = "popular",
@@ -32,4 +34,19 @@ export interface TvShowType extends CommonType {
   origin_country: string[];
   original_name: string;
   poster_path: string;
+}
+
+export interface MovieDetailType extends MovieType {
+  belongs_to_collection: string | null;
+  budget: number;
+  genres: GenresDetailType[];
+  homepage: string;
+  imdb_id: string;
+  production_companies: ProductionCompanyType[];
+  production_countries: ProductionCountryType[];
+  revenue: number;
+  runtime: number;
+  spoken_languages: SpokenLanguage[];
+  status: string;
+  tagline: string;
 }
